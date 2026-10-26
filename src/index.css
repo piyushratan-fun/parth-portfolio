@@ -33,7 +33,7 @@
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
+  --radius-lg: 2px;
   --radius-xl: calc(var(--radius) + 4px);
 }
 
@@ -66,7 +66,7 @@
   --input: 0 0% 88%;
   --ring: 230 100% 58%;
   
-  --radius: 0.5rem;
+  --radius: 0.125rem;
   --ease-premium: cubic-bezier(0.23, 1, 0.32, 1);
 }
 

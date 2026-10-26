@@ -96,22 +96,37 @@ export function Hero() {
         K
       </motion.div>
 
-      {/* Giant Stethoscope SVG in the Space Between PARTH & KASHYAP */}
+      {/* Stethoscope Background Icon (50% Sized) with "Medical Aspirant" Label */}
       <motion.div
         aria-hidden="true"
-        className="absolute left-[8%] md:left-[22%] top-[40%] md:top-[44%] -translate-y-1/2 z-0 select-none pointer-events-none text-foreground/[0.10] md:text-foreground/[0.12] transform-gpu"
+        className="absolute left-[8%] md:left-[24%] top-[40%] md:top-[44%] -translate-y-1/2 z-0 select-none pointer-events-none flex flex-col items-center justify-center transform-gpu"
         style={{
-          width: "clamp(280px, 38vw, 560px)",
-          height: "clamp(280px, 38vw, 560px)",
           x: useStaticMotion ? 0 : iconsX,
           y: useStaticMotion ? 0 : y1,
           rotate: -12,
         }}
       >
-        <Stethoscope
-          className="w-full h-full text-foreground/80"
-          strokeWidth={0.8}
-        />
+        <div
+          style={{
+            width: "clamp(140px, 19vw, 280px)",
+            height: "clamp(140px, 19vw, 280px)",
+          }}
+          className="relative flex items-center justify-center text-foreground/[0.14] md:text-foreground/[0.18]"
+        >
+          <Stethoscope
+            className="w-full h-full text-foreground/85"
+            strokeWidth={1.0}
+          />
+
+          {/* Sharp "Medical Aspirant" Badge directly on Stethoscope */}
+          <div className="absolute inset-x-[-15%] top-[54%] -translate-y-1/2 flex items-center justify-center">
+            <div className="border border-foreground/20 bg-background/95 px-3 py-1 shadow-xs backdrop-blur-xs">
+              <p className="font-display text-[10px] sm:text-xs font-bold uppercase tracking-[0.28em] text-foreground whitespace-nowrap">
+                Medical Aspirant
+              </p>
+            </div>
+          </div>
+        </div>
       </motion.div>
 
       {/* Floating PCB Stream Icons */}
@@ -193,7 +208,7 @@ export function Hero() {
           </h1>
         </motion.div>
 
-        {/* Hero Bottom Controls & Details — Positioned cleanly below KASHYAP */}
+        {/* Hero Bottom Controls & Details — Sharp corners & Positioned cleanly below KASHYAP */}
         <motion.div
           data-mobile-static-motion="true"
           className="absolute bottom-4 left-6 right-6 z-30 md:bottom-6 md:left-12 md:right-12"
@@ -206,7 +221,7 @@ export function Hero() {
               <Button
                 asChild
                 size="hero"
-                className="premium-soft-hover w-full font-bold uppercase tracking-[0.12em] sm:min-w-[14rem] sm:tracking-[0.24em]"
+                className="premium-soft-hover w-full rounded-none font-bold uppercase tracking-[0.12em] sm:min-w-[14rem] sm:tracking-[0.24em]"
               >
                 <a href="#about">About Parth</a>
               </Button>
@@ -217,7 +232,7 @@ export function Hero() {
                 asChild
                 variant="outline"
                 size="hero"
-                className="premium-soft-hover w-full border-foreground font-bold uppercase tracking-[0.12em] hover:text-background sm:min-w-[18rem] sm:tracking-[0.18em]"
+                className="premium-soft-hover w-full rounded-none border-foreground font-bold uppercase tracking-[0.12em] hover:text-background sm:min-w-[18rem] sm:tracking-[0.18em]"
               >
                 <a href="#pcb-curriculum">PCB Curriculum</a>
               </Button>

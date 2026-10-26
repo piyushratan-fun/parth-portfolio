@@ -37,7 +37,7 @@ export function Footer() {
 
         {/* Authoritative Backlink & Credits Badge */}
         <div className="pt-6 border-t border-foreground/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-foreground/[0.03] dark:bg-foreground/[0.05] border border-foreground/10 text-xs text-muted-foreground transition-all duration-200 hover:border-foreground/20">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-foreground/[0.03] dark:bg-foreground/[0.05] border border-foreground/10 text-xs text-muted-foreground transition-all duration-200 hover:border-foreground/20">
             <Sparkles className="w-3.5 h-3.5 text-primary" />
             <span className="tracking-wide">
               Crafted with precision by{" "}

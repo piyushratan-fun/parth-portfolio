@@ -77,8 +77,8 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-3 pl-4 border-l border-foreground/10">
-            <div className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-[11px] font-medium text-primary">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            <div className="inline-flex items-center gap-1.5 rounded-none border border-primary/20 bg-primary/5 px-3 py-1 text-[11px] font-medium text-primary">
+              <span className="h-1.5 w-1.5 rounded-none bg-emerald-500 animate-pulse" />
               Pre-Med Aspirant
             </div>
             <Button asChild size="sm" className="font-bold tracking-wider uppercase text-xs">

@@ -88,7 +88,7 @@ export function AboutSection() {
             {PARTH_PROFILE.stats.map((stat, idx) => (
               <div
                 key={stat.label}
-                className="group relative overflow-hidden rounded-2xl border border-foreground/10 bg-card p-6 transition-all duration-300 hover:border-primary/40 hover:shadow-lg"
+                className="group relative overflow-hidden rounded-none border border-foreground/10 bg-card p-6 transition-all duration-300 hover:border-primary/40 hover:shadow-lg"
               >
                 <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
                   <Stethoscope className="w-16 h-16 text-primary" />
@@ -137,11 +137,11 @@ export function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.12 }}
-                  className="rounded-2xl border border-foreground/10 bg-card p-8 flex flex-col justify-between transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:-translate-y-1"
+                  className="rounded-none border border-foreground/10 bg-card p-8 flex flex-col justify-between transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:-translate-y-1"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-6">
-                      <div className="h-12 w-12 rounded-xl bg-foreground/5 flex items-center justify-center text-foreground group-hover:text-primary transition-colors">
+                      <div className="h-12 w-12 rounded-none bg-foreground/5 flex items-center justify-center text-foreground group-hover:text-primary transition-colors">
                         <Icon className="h-6 w-6 text-primary" />
                       </div>
                       <Badge variant="outline" className="text-[10px] font-bold uppercase tracking-widest">
@@ -201,7 +201,7 @@ export function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="rounded-2xl border border-foreground/10 bg-muted/30 p-6 flex flex-col justify-between"
+                  className="rounded-none border border-foreground/10 bg-muted/30 p-6 flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center gap-2 mb-3">
