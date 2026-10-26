@@ -45,10 +45,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <BrandLoader visible={showLoader} />
       <div
         data-route-shell
-        className="w-full min-h-screen transition-opacity duration-500"
+        className="w-full min-h-screen transition-opacity duration-300"
         style={{
-          opacity: showLoader && isHydrated ? 0 : 1,
-          pointerEvents: showLoader && isHydrated ? "none" : "auto",
+          opacity: isHydrated ? 1 : 0,
         }}
       >
         {children}
