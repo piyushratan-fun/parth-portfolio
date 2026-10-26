@@ -16,7 +16,6 @@ import {
   FlaskConical,
   HeartPulse,
   Microscope,
-  Sparkles,
   Stethoscope,
   Plus,
 } from "lucide-react";
@@ -67,31 +66,11 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative w-full overflow-hidden bg-background pt-16 md:pt-20"
+      className="relative w-full overflow-hidden bg-background pt-20"
       onPointerLeave={useStaticMotion ? undefined : resetHeroPointer}
       onPointerMove={useStaticMotion ? undefined : handleHeroPointerMove}
     >
-      {/* 1. PCB STREAM • MEDICAL ASPIRANT Banner Just Below Navbar */}
-      <motion.div
-        data-mobile-static-motion="true"
-        className="relative z-30 mx-auto w-full max-w-[1600px] px-6 pt-4 pb-2 md:px-12 flex items-center justify-between"
-        initial={useStaticMotion ? false : { opacity: 0, y: -12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-background/80 px-4 py-1.5 shadow-xs backdrop-blur-md">
-          <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-          <p className="text-[11px] md:text-xs font-bold uppercase tracking-[0.25em] text-foreground">
-            PCB Stream • Medical Aspirant
-          </p>
-        </div>
-        <p className="hidden sm:inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-          <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-          Senior Secondary • Class 12
-        </p>
-      </motion.div>
-
-      {/* Background Big Monogram Letter P — Increased Opacity */}
+      {/* Background Big Monogram Letter P */}
       <motion.div
         aria-hidden="true"
         className="absolute top-[8%] right-[16%] z-0 select-none font-display font-bold leading-none text-foreground/[0.18] pointer-events-none"
@@ -104,7 +83,7 @@ export function Hero() {
         P
       </motion.div>
 
-      {/* Background Big Monogram Letter K — Increased Opacity */}
+      {/* Background Big Monogram Letter K */}
       <motion.div
         aria-hidden="true"
         className="absolute top-[8%] right-[0%] z-0 select-none font-display font-bold leading-none text-foreground/[0.12] pointer-events-none"
@@ -117,6 +96,24 @@ export function Hero() {
         K
       </motion.div>
 
+      {/* Giant Stethoscope SVG in the Space Between PARTH & KASHYAP */}
+      <motion.div
+        aria-hidden="true"
+        className="absolute left-[8%] md:left-[22%] top-[40%] md:top-[44%] -translate-y-1/2 z-0 select-none pointer-events-none text-foreground/[0.10] md:text-foreground/[0.12] transform-gpu"
+        style={{
+          width: "clamp(280px, 38vw, 560px)",
+          height: "clamp(280px, 38vw, 560px)",
+          x: useStaticMotion ? 0 : iconsX,
+          y: useStaticMotion ? 0 : y1,
+          rotate: -12,
+        }}
+      >
+        <Stethoscope
+          className="w-full h-full text-foreground/80"
+          strokeWidth={0.8}
+        />
+      </motion.div>
+
       {/* Floating PCB Stream Icons */}
       <motion.div
         aria-hidden="true"
@@ -127,17 +124,16 @@ export function Hero() {
         <Microscope className="floating-icon top-[32%] right-[32%] text-blue-500/25" />
         <Atom className="floating-icon top-[54%] left-[16%] text-purple-500/25" />
         <Plus className="floating-icon top-[22%] right-[38%] text-primary/35" strokeWidth={1.5} />
-        <FlaskConical className="floating-icon top-[60%] left-[38%] text-amber-500/25" strokeWidth={1.5} />
+        <FlaskConical className="floating-icon top-[64%] left-[38%] text-amber-500/25" strokeWidth={1.5} />
         <HeartPulse className="floating-icon top-[40%] left-[5%] text-rose-500/25" />
-        <Stethoscope className="floating-icon top-[62%] right-[22%] text-teal-500/25" />
-        <Activity className="floating-icon top-[48%] right-[5%] text-indigo-500/25" />
+        <Activity className="floating-icon top-[50%] right-[5%] text-indigo-500/25" />
       </motion.div>
 
-      <div className="relative z-10 mx-auto min-h-[calc(100svh-5rem)] w-full max-w-[1600px] px-6 md:h-[calc(100vh-5rem)] md:px-12">
+      <div className="relative z-10 mx-auto min-h-[100svh] w-full max-w-[1600px] px-6 md:h-screen md:px-12">
         {/* PARTH Text Header */}
         <motion.div
           data-mobile-static-motion="true"
-          className="absolute left-6 top-[2%] z-20 md:left-12"
+          className="absolute left-6 top-[8%] z-20 md:left-12"
           initial={useStaticMotion ? false : { opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -152,8 +148,8 @@ export function Hero() {
 
         {/* Center-Right Parth Silhouette / Cutout ("Sliver") */}
         <div
-          className="absolute left-[55%] top-[48%] z-10 -translate-x-[31%] -translate-y-[58%] pointer-events-none"
-          style={{ height: "clamp(340px, 82vh, 1240px)", width: "clamp(340px, 82vh, 1240px)" }}
+          className="absolute left-[55%] top-[50%] z-10 -translate-x-[31%] -translate-y-[58%] pointer-events-none"
+          style={{ height: "clamp(340px, 84vh, 1280px)", width: "clamp(340px, 84vh, 1280px)" }}
         >
           <motion.div
             data-mobile-static-motion="true"
@@ -180,7 +176,7 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* KASHYAP Text Header — Raised upward so CTA buttons never overlap */}
+        {/* KASHYAP Text Header — Raised to avoid any button overlap */}
         <motion.div
           data-mobile-static-motion="true"
           className="absolute bottom-[28%] right-6 z-20 text-right md:bottom-[26%] md:right-24"
@@ -197,7 +193,7 @@ export function Hero() {
           </h1>
         </motion.div>
 
-        {/* Hero Bottom Controls & Details — Explicitly below KASHYAP */}
+        {/* Hero Bottom Controls & Details — Positioned cleanly below KASHYAP */}
         <motion.div
           data-mobile-static-motion="true"
           className="absolute bottom-4 left-6 right-6 z-30 md:bottom-6 md:left-12 md:right-12"
