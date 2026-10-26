@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <defs>
+    <linearGradient id="mark_grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2B4FFF"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <filter id="mark_glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Dark base tile -->
+  <rect width="120" height="120" rx="28" fill="#0a0a0a"/>
+  <!-- Dynamic accent border -->
+  <rect x="1.5" y="1.5" width="117" height="117" rx="26.5" stroke="url(#mark_grad)" stroke-width="3" stroke-opacity="0.85"/>
+  
+  <!-- Subtle inner background orbital glow -->
+  <circle cx="85" cy="35" r="22" fill="#2B4FFF" fill-opacity="0.15" filter="url(#mark_glow)"/>
+  <circle cx="35" cy="85" r="22" fill="#10b981" fill-opacity="0.12" filter="url(#mark_glow)"/>
+
+  <!-- Interlocking PK Mark -->
+  <!-- Stem & Bowl of P -->
+  <path d="M32 90V30H50C60 30 67 37 67 47C67 57 60 64 50 64H44V90H32ZM44 52H49C53 52 56 49.5 56 47C56 44.5 53 42 49 42H44V52Z" fill="#ffffff"/>
+  
+  <!-- Diagonal arms of K (forming a dynamic molecular helix angle) -->
+  <path d="M64 90L78 69L65 50H77L84.5 61.5L92 50H104L91 69L105 90H93L84.5 77L76 90H64Z" fill="url(#mark_grad)"/>
+
+  <!-- Biology & Physics accent nodes -->
+  <circle cx="92" cy="38" r="5" fill="#10b981" filter="url(#mark_glow)"/>
+  <circle cx="28" cy="84" r="4" fill="#2B4FFF"/>
+</svg>

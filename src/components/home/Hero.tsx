@@ -24,7 +24,6 @@ import { MagneticButton } from "@/components/motion/MagneticButton";
 import { RevealText } from "@/components/motion/RevealText";
 import { Button } from "@/components/ui/button";
 import { useMobileMotionSafety } from "@/hooks/useMobileMotionSafety";
-import { PARTH_PROFILE } from "@/content/parthContent";
 
 const heroSilhouette = "/hero-silhouette.png";
 
@@ -68,14 +67,34 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative w-full overflow-hidden bg-background pt-20"
+      className="relative w-full overflow-hidden bg-background pt-16 md:pt-20"
       onPointerLeave={useStaticMotion ? undefined : resetHeroPointer}
       onPointerMove={useStaticMotion ? undefined : handleHeroPointerMove}
     >
-      {/* Background Big Monogram Letter P */}
+      {/* 1. PCB STREAM • MEDICAL ASPIRANT Banner Just Below Navbar */}
+      <motion.div
+        data-mobile-static-motion="true"
+        className="relative z-30 mx-auto w-full max-w-[1600px] px-6 pt-4 pb-2 md:px-12 flex items-center justify-between"
+        initial={useStaticMotion ? false : { opacity: 0, y: -12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-background/80 px-4 py-1.5 shadow-xs backdrop-blur-md">
+          <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+          <p className="text-[11px] md:text-xs font-bold uppercase tracking-[0.25em] text-foreground">
+            PCB Stream • Medical Aspirant
+          </p>
+        </div>
+        <p className="hidden sm:inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+          <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+          Senior Secondary • Class 12
+        </p>
+      </motion.div>
+
+      {/* Background Big Monogram Letter P — Increased Opacity */}
       <motion.div
         aria-hidden="true"
-        className="absolute top-[8%] right-[16%] z-0 select-none font-display font-bold leading-none text-foreground/[0.04] pointer-events-none"
+        className="absolute top-[8%] right-[16%] z-0 select-none font-display font-bold leading-none text-foreground/[0.18] pointer-events-none"
         style={{
           fontSize: "clamp(200px, 35vw, 500px)",
           x: useStaticMotion ? 0 : letterX,
@@ -85,10 +104,10 @@ export function Hero() {
         P
       </motion.div>
 
-      {/* Background Big Monogram Letter K */}
+      {/* Background Big Monogram Letter K — Increased Opacity */}
       <motion.div
         aria-hidden="true"
-        className="absolute top-[8%] right-[0%] z-0 select-none font-display font-bold leading-none text-foreground/[0.024] pointer-events-none"
+        className="absolute top-[8%] right-[0%] z-0 select-none font-display font-bold leading-none text-foreground/[0.12] pointer-events-none"
         style={{
           fontSize: "clamp(200px, 35vw, 500px)",
           x: useStaticMotion ? 0 : letterReverseX,
@@ -104,31 +123,25 @@ export function Hero() {
         className="absolute inset-0 z-0 overflow-hidden pointer-events-none"
         style={{ x: useStaticMotion ? 0 : iconsX, y: useStaticMotion ? 0 : iconsY }}
       >
-        <Dna className="floating-icon top-[12%] left-[30%] text-emerald-500/20" />
-        <Microscope className="floating-icon top-[32%] right-[32%] text-blue-500/20" />
-        <Atom className="floating-icon top-[56%] left-[16%] text-purple-500/20" />
-        <Plus className="floating-icon top-[20%] right-[38%] text-primary/30" strokeWidth={1.5} />
-        <FlaskConical className="floating-icon top-[62%] left-[38%] text-amber-500/20" strokeWidth={1.5} />
-        <HeartPulse className="floating-icon top-[40%] left-[5%] text-rose-500/20" />
-        <Stethoscope className="floating-icon top-[62%] right-[22%] text-teal-500/20" />
-        <Activity className="floating-icon top-[48%] right-[5%] text-indigo-500/20" />
+        <Dna className="floating-icon top-[14%] left-[30%] text-emerald-500/25" />
+        <Microscope className="floating-icon top-[32%] right-[32%] text-blue-500/25" />
+        <Atom className="floating-icon top-[54%] left-[16%] text-purple-500/25" />
+        <Plus className="floating-icon top-[22%] right-[38%] text-primary/35" strokeWidth={1.5} />
+        <FlaskConical className="floating-icon top-[60%] left-[38%] text-amber-500/25" strokeWidth={1.5} />
+        <HeartPulse className="floating-icon top-[40%] left-[5%] text-rose-500/25" />
+        <Stethoscope className="floating-icon top-[62%] right-[22%] text-teal-500/25" />
+        <Activity className="floating-icon top-[48%] right-[5%] text-indigo-500/25" />
       </motion.div>
 
-      <div className="relative z-10 mx-auto min-h-[100svh] w-full max-w-[1600px] px-6 md:h-screen md:px-12">
+      <div className="relative z-10 mx-auto min-h-[calc(100svh-5rem)] w-full max-w-[1600px] px-6 md:h-[calc(100vh-5rem)] md:px-12">
         {/* PARTH Text Header */}
         <motion.div
           data-mobile-static-motion="true"
-          className="absolute left-6 top-[8%] z-20 md:left-12"
+          className="absolute left-6 top-[2%] z-20 md:left-12"
           initial={useStaticMotion ? false : { opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="flex items-center gap-2 mb-2">
-            <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground">
-              PCB Stream • Medical Aspirant
-            </p>
-          </div>
           <h1
             className="font-display font-bold uppercase leading-none tracking-normal text-display-tone"
             style={{ fontSize: "clamp(55px, 14vw, 260px)" }}
@@ -137,10 +150,10 @@ export function Hero() {
           </h1>
         </motion.div>
 
-        {/* Center Parth Silhouette / Cutout ("Sliver") */}
+        {/* Center-Right Parth Silhouette / Cutout ("Sliver") */}
         <div
-          className="absolute left-[55%] top-[50%] z-10 -translate-x-[31%] -translate-y-[58%] pointer-events-none"
-          style={{ height: "clamp(340px, 84vh, 1280px)", width: "clamp(340px, 84vh, 1280px)" }}
+          className="absolute left-[55%] top-[48%] z-10 -translate-x-[31%] -translate-y-[58%] pointer-events-none"
+          style={{ height: "clamp(340px, 82vh, 1240px)", width: "clamp(340px, 82vh, 1240px)" }}
         >
           <motion.div
             data-mobile-static-motion="true"
@@ -167,10 +180,10 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* KASHYAP Text Header */}
+        {/* KASHYAP Text Header — Raised upward so CTA buttons never overlap */}
         <motion.div
           data-mobile-static-motion="true"
-          className="absolute bottom-[24%] right-6 z-20 text-right md:right-28"
+          className="absolute bottom-[28%] right-6 z-20 text-right md:bottom-[26%] md:right-24"
           initial={useStaticMotion ? false : { opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
@@ -184,15 +197,15 @@ export function Hero() {
           </h1>
         </motion.div>
 
-        {/* Hero Bottom Controls & Details */}
+        {/* Hero Bottom Controls & Details — Explicitly below KASHYAP */}
         <motion.div
           data-mobile-static-motion="true"
-          className="absolute bottom-22 left-6 right-6 z-30 md:left-12 md:right-12"
+          className="absolute bottom-4 left-6 right-6 z-30 md:bottom-6 md:left-12 md:right-12"
           initial={useStaticMotion ? false : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
-          <div className="flex w-full flex-row items-stretch justify-center gap-3 md:gap-[8vw]">
+          <div className="flex w-full flex-row items-stretch justify-center gap-3 md:gap-[8vw] mb-4">
             <MagneticButton className="min-w-0 flex-1 sm:flex-none">
               <Button
                 asChild
@@ -215,20 +228,20 @@ export function Hero() {
             </MagneticButton>
           </div>
 
-          <div className="flex items-end justify-between gap-6 border-t border-foreground/10 pt-4 md:pt-6">
+          <div className="flex items-end justify-between gap-6 border-t border-foreground/10 pt-3 md:pt-4">
             <div>
-              <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-muted-foreground">
+              <p className="mb-0.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-muted-foreground">
                 Academic Focus
               </p>
-              <p className="text-sm font-medium uppercase tracking-wide text-foreground">
+              <p className="text-xs sm:text-sm font-medium uppercase tracking-wide text-foreground">
                 Physics • Chemistry • Biology • Pre-Med
               </p>
             </div>
             <div className="text-right">
-              <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-muted-foreground">
+              <p className="mb-0.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-muted-foreground">
                 Academic Year
               </p>
-              <p className="text-sm font-medium uppercase tracking-wide text-foreground">
+              <p className="text-xs sm:text-sm font-medium uppercase tracking-wide text-foreground">
                 Class 12 • 2026
               </p>
             </div>

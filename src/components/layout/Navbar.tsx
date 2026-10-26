@@ -43,10 +43,14 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto flex min-h-[4.5rem] max-w-[1600px] items-center justify-between px-6 md:px-12">
-        {/* Brand Monogram */}
+        {/* Brand Monogram & Logo */}
         <Link href="#hero" className="group flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-foreground text-background font-display font-bold text-sm tracking-tight transition-transform duration-300 group-hover:scale-105 shadow-md">
-            {PARTH_PROFILE.monogram}
+          <div className="flex h-10 w-10 items-center justify-center transition-transform duration-300 group-hover:scale-105">
+            <img
+              src="/logo-mark.svg"
+              alt="Parth Kashyap Logo Mark"
+              className="h-10 w-10 object-contain drop-shadow-sm"
+            />
           </div>
           <div className="flex flex-col">
             <span className="font-display font-bold tracking-tight text-foreground text-base leading-none">
