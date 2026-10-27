@@ -77,7 +77,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" data-app-ready="true">
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="author" href="https://piyushratan.in" />

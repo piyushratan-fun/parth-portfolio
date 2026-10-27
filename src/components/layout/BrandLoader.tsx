@@ -55,9 +55,15 @@ export function BrandLoader({ visible }: BrandLoaderProps) {
   return (
     <AnimatePresence>
       {visible ? (
-        <div
+        <motion.div
           key="brand-loader-root"
           className="fixed inset-0 z-[200] pointer-events-auto select-none overflow-hidden"
+          initial={{ opacity: 1 }}
+          exit={{
+            opacity: 0,
+            pointerEvents: "none",
+            transition: { duration: 0.8, ease: splitEase },
+          }}
         >
           {/* Top Half Split Shutter (Slides UP on Exit) */}
           <motion.div
@@ -195,7 +201,7 @@ export function BrandLoader({ visible }: BrandLoaderProps) {
               </div>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       ) : null}
     </AnimatePresence>
   );

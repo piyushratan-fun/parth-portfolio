@@ -107,30 +107,13 @@
     @apply font-display tracking-tight;
   }
 
-  :root:not([data-app-ready="true"]) [data-route-shell] {
-    opacity: 0 !important;
-    transform: translate3d(0, 10px, 0) !important;
-    pointer-events: none !important;
-  }
-
-  :root[data-route-transition] [data-route-shell] {
-    opacity: 0 !important;
-    transform: translate3d(0, 10px, 0) !important;
-    pointer-events: none !important;
+  [data-route-shell] {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   :root[data-route-transition="pending"] {
     cursor: progress;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    :root:not([data-app-ready="true"]) [data-route-shell] {
-      transform: none !important;
-    }
-
-    :root[data-route-transition] [data-route-shell] {
-      transform: none !important;
-    }
   }
 }
 
