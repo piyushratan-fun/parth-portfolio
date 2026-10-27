@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { useMobileMotionSafety } from "@/hooks/useMobileMotionSafety";
 import { PARTH_PROFILE } from "@/content/parthContent";
 
 type BrandLoaderProps = {
@@ -14,13 +13,12 @@ const splitEase = [0.77, 0, 0.175, 1] as const;
 
 export function BrandLoader({ visible }: BrandLoaderProps) {
   const prefersReducedMotion = useReducedMotion();
-  const isMobileSafe = useMobileMotionSafety();
-  const noMotion = prefersReducedMotion || isMobileSafe;
+  const noMotion = Boolean(prefersReducedMotion);
 
   const [count, setCount] = React.useState(0);
   const rafRef = React.useRef<number | null>(null);
   const startRef = React.useRef<number | null>(null);
-  const DURATION = 2000;
+  const DURATION = 1800;
 
   React.useEffect(() => {
     if (!visible) {
@@ -57,10 +55,12 @@ export function BrandLoader({ visible }: BrandLoaderProps) {
       {visible ? (
         <motion.div
           key="brand-loader-root"
-          className="fixed inset-0 z-[200] pointer-events-auto select-none overflow-hidden"
+          className="brand-loader-overlay fixed inset-0 z-[200] pointer-events-auto select-none overflow-hidden"
           initial={{ opacity: 1 }}
+          animate={{ backgroundColor: "transparent" }}
           exit={{
             opacity: 0,
+            backgroundColor: "transparent",
             pointerEvents: "none",
             transition: { duration: 0.8, ease: splitEase },
           }}

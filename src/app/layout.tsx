@@ -81,6 +81,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="author" href="https://piyushratan.in" />
+        <style>{`
+          .brand-loader-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background-color: #090909;
+          }
+        `}</style>
         <JsonLd />
       </head>
       <body>
