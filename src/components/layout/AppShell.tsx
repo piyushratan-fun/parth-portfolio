@@ -2,6 +2,7 @@
 
 import React from "react";
 import { BrandLoader } from "@/components/layout/BrandLoader";
+import { AutoUpdateWatcher } from "@/components/common/AutoUpdateWatcher";
 
 const MANDATORY_LOADER_DURATION_MS = 2000;
 const ROOT_APP_READY_ATTRIBUTE = "data-app-ready";
@@ -36,6 +37,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   return (
     <>
+      <AutoUpdateWatcher />
       <BrandLoader visible={showLoader} />
       <div
         data-route-shell
